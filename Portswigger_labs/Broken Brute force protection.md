@@ -17,4 +17,20 @@ An authentication vulnerability is a security weakness that allows an attacker t
 * Implement proper authentication token validation and ensure tokens are securely generated, transmitted, and stored.
 ## Lab: Broken brute-force protection, multiple credentials per request
 * Open the URL in portswigger proxy tab to intercept the request.
-![request intercepted](Screenshots/SS1.png)
+  
+![open proxy browser](Screenshots/SS1.png)
+* Go to my account and login using username=carlos(given), and a random password to intercept the POST request on burp.
+
+![request intercepted](Screenshots/SS2.png)
+* Send the request to repeater to exploit the brute force protection, by using multiple credentials in a single request.
+
+![repeater](Screenshots/SS3.png)
+* In the repeater, change the password to a given set list of passwords into JSON format and repeat the request.
+
+![password list](Screenshots/SS4.png)  
+* Open the request in browser
+
+![request in browser](Screenshots/SS5.png)
+* We have access to Carlos’s account
+
+![access gained](Screenshots/SS6.png)
