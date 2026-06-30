@@ -41,14 +41,31 @@ An authentication vulnerability is a security weakness that allows an attacker t
 
 ![login](Screenshots/SS2.1.png)
 * It asks for a verification code, add a random four digit number for the verification code to capture the request in burp.
+
+![verification](Screenshots/SS2.2.png)
 * After failing the verification once, we get another chance to add another verification code, failing that, it logs us out of carlos’s account.
-* We need to use burp’s session handling features to log back in automatically after sending each request
+
+![reverify](Screenshots/SS2.3.png)
+* We need to use burp’s session handling features to log back in automatically after sending each request.
+
+![session](Screenshots/SS2.4.png)
 * We add a rule to run a macro every time we brute force
-* Add the requests that are to be run in sequential order
+
+![macro](Screenshots/SS2.5.png)
+* Add the requests that are to be run in sequential order.
+
+![macro rule](Screenshots/SS2.6.png)
 * To successfully find the authentication code, we need to brute force the code in the verification page using burp’s intruder. Send the POST request to burp’s intruder.
+
+![send to intruder](Screenshots/SS2.7.png)
 * Add payload and payload rules to be only integers to the mfa-code position, and set it to only 4-digit integers since only integers are allowed and the code is of 4 digits.
+
+![payload](Screenshots/SS2.8.png)
 * Set maximum concurrent requests to be 1 in the resource pool, otherwise we will be logged out of the account in case of 2 requests.
+
+![max requests](Screenshots/SS2.9.png)
 * Start the attack, and wait till we get a status code of 302(found). On opening the response, we find the session id that can be used to replace session permanently.
+
 * We go to the inspect page of the website where the cookie’s session id is stored, and replace that with the id that had been found
 * After replacing the session id, we have solved the lab, and are now logged in into Carlos’s account
 
