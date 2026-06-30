@@ -66,6 +66,10 @@ An authentication vulnerability is a security weakness that allows an attacker t
 ![max requests](Screenshots/SS2.9.png)
 * Start the attack, and wait till we get a status code of 302(found). On opening the response, we find the session id that can be used to replace session permanently.
 
+![found](Screenshots/SS2.10.png)
 * We go to the inspect page of the website where the cookie’s session id is stored, and replace that with the id that had been found
+
+![session id](Screenshots/SS2.11.png)
 * After replacing the session id, we have solved the lab, and are now logged in into Carlos’s account
 
+![solved](Screenshots/SS2.12.png)
