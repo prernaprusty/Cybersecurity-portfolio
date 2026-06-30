@@ -1,5 +1,4 @@
-# Broken brute-force protection, multiple credentials per request (Authentication)
-## Description
+# Broken brute-force protection, multiple credentials per request 
 An authentication vulnerability is a security weakness that allows an attacker to bypass, weaken, or abuse the authentication process and gain access to an account or system without properly proving their identity. These can arise from poor password management, insecure session handling, weak multi-factor authentication implementations, credential stuffing attacks, brute-force attacks, or improper validation of authentication tokens and credentials. 
 ## Impact:
 * Unauthorized access to user accounts by exploiting weak or compromised credentials.
